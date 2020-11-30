@@ -45,7 +45,7 @@ metric learning の基本的なことについては、以下のわかりやす�
 
 また、 この論文では **精度** (※1) **のみでしか評価されてません。** ここ数年の発展は、収束の速さなど、 **精度以外への貢献が大きい** と感じています。例として、以下の図のように収束が早く安定して学習できる手法が提案されてきました。
 
-![](https://storage.googleapis.com/zenn-user-upload/v0bw5z7s91n3rujurbd9kpacx7ab)
+![](https://storage.googleapis.com/zenn-user-upload/v0bw5z7s91n3rujurbd9kpacx7ab =400x)
 出典： [[2003.13911] Proxy Anchor Loss for Deep Metric Learning](https://arxiv.org/abs/2003.13911.pdf)
 参考： [CVPR2020読み会 Proxy Anchor Loss for Deep Metric Learning - Speaker Deck](https://speakerdeck.com/satokeiju/cvpr2020du-mihui-proxy-anchor-loss-for-deep-metric-learning)
 
