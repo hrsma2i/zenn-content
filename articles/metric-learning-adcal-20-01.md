@@ -3,10 +3,10 @@ title: "metric learningは発展してないわけでもsoftmax cross cntropyに
 emoji: "📏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["metriclearning"]
-published: false
+published: true
 ---
 
-metric learning アドベントカレンダー2020 2回目の記事です。「 **自分は画像系じゃないから metric learning とか関係ない〜** 」と思ってる方にとって、 このアドベントカレンダーが **metric learning を学ぶきっかけ** になったらと考えています。
+metric learning アドベントカレンダー 2020 の12月1日の記事です。「 **自分は画像系じゃないから metric learning とか関係ない〜** 」と思ってる方にとって、 このアドベントカレンダーが **metric learning を学ぶきっかけ** になったらと考えています。
 
 # この記事の目的は？
 
