@@ -6,7 +6,7 @@ topics: ["metriclearning"]
 published: true
 ---
 
-metric learning アドベントカレンダー 2020 の12月1日の記事です。「 **自分は画像系じゃないから metric learning とか関係ない〜** 」と思ってる方にとって、 このアドベントカレンダーが **metric learning を学ぶきっかけ** になったらと考えています。
+こちらは [metric learning Advent Calendar 2020](https://adventar.org/calendars/5596) の 12月1日の記事です。
 
 # この記事の目的は？
 
@@ -77,6 +77,8 @@ metric learning の基本的なことについては、以下のわかりやす�
 # 次回は？
 
 次回のタイトルは「metric learning と softmax cross entropy を比べること自体間違っている」です。 SCE が metric learning と本質的には同じだということを簡単に説明し、それがわかると何が嬉しいのかについても紹介したいと思います。
+
+[metric learning Advent Calendar 2020](https://adventar.org/calendars/5596)
 
 ---
 
