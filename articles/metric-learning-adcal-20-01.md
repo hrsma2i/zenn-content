@@ -6,7 +6,9 @@ topics: ["metriclearning"]
 published: true
 ---
 
-こちらは [metric learning Advent Calendar 2020](https://adventar.org/calendars/5596) の 12月1日の記事です。
+:::message
+こちらは [metric learning Advent Calendar 2020](https://adventar.org/calendars/5596) の記事です。
+:::
 
 # この記事の目的は？
 
