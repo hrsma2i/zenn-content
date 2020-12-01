@@ -21,6 +21,7 @@ published: false
 - 異常検知
 - learning to rank
 - カーネル法
+- 自己教師あり学習
 - 推薦
 - 自然言語処理
 
@@ -150,6 +151,18 @@ metric learning はカーネル法と等価らしいです。詳細は以下の�
 
 [距離計量学習とカーネル学習について - a lonely miner](http://conditional.github.io/blog/2013/04/20/distance-metric-learning-and-kernel-learning/)
 
+
+# 自己教師あり学習
+
+自己教師あり学習もかなり近いことをやっているようです。
+
+![](https://qiita-user-contents.imgix.net/https%3A%2F%2Fimgur.com%2FJhoPLVG.png?ixlib=rb-1.2.2&auto=format&gif-q=60&q=75&w=1400&fit=max&s=c2d07d10ff6b5d3518bdcc60642a9299 =300x)
+
+![](https://qiita-user-contents.imgix.net/https%3A%2F%2Fi.imgur.com%2F7EFjxSx.png?ixlib=rb-1.2.2&auto=format&gif-q=60&q=75&w=1400&fit=max&s=aa7ec5d50019baea055c21587342fbea =800x)
+
+出典・参考：[2020年超盛り上がり！自己教師あり学習の最前線まとめ！ - Qiita](https://qiita.com/omiita/items/a7429ec42e4eef4b6a4d)
+
+負例の獲得方法を工夫した4つアーキテクチャなどは、自己教師あり学習だけに限らず、他の分野でも活かせそうです。
 
 # 推薦
 
