@@ -67,7 +67,7 @@ $$
 
 また、以下の論文では情報理論の観点から丁寧に証明されています。
 
-Boudiaf, M. et al., 2020: [[2003.08983] A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses](https://arxiv.org/abs/2003.08983)
+[(M. Boudiaf et al., 2020, ECCV) A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses](http://arxiv.org/abs/2003.08983) 
 
 ところで、上記の SCE の式を見て、ロジットの計算方法に違和感を覚えられたかもしれません。実は、上記の SCE の使い方は、画像分類でよく見られる使い方とは若干異なります。次のセクションでは、その2つの違いを説明します。
 
@@ -105,7 +105,7 @@ $\bm{z}$ が片方だけ $\bm{\theta}$ になり、$\sum$ が1つ外れました
 
 入力データのドメインが、 **(i)は画像×画像** 、 **(ii)は画像×クラス** と異なっていますが、どちらも同じ最適化問題を解いています。その証明は以下の論文でされています。論文中のPairwise Cross-Entropy (PCE)が(i)に、 Cross-Entropy (CE)が(ii)に相当します。
 
-Boudiaf, M. et al., 2020: [[2003.08983] A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses](https://arxiv.org/abs/2003.08983)
+[(M. Boudiaf et al., 2020, ECCV) A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses](http://arxiv.org/abs/2003.08983) 
 
 それぞれの呼び方ですが、この記事では、以降、 **(i) を Pairwise Softmax Cross-Entropy (PSCE)** 、 **(ii) を Classification Softmax Cross-Entropy (CSCE)** と呼ぶことにします。
 
@@ -120,11 +120,16 @@ Boudiaf, M. et al., 2020: [[2003.08983] A unifying mutual information view of me
 
 また、 metric learning の研究では proxy 系の手法が話題ですが、 proxy とはクラスの重みベクトル $\bm{\theta}_y$ のようなものなので、 CSCE と近い手法と考えられます。
 
-- [CVPR2020読み会 Proxy Anchor Loss for Deep Metric Learning - Speaker Deck](https://speakerdeck.com/satokeiju/cvpr2020du-mihui-proxy-anchor-loss-for-deep-metric-learning)
+[CVPR2020読み会 Proxy Anchor Loss for Deep Metric Learning - Speaker Deck](https://speakerdeck.com/satokeiju/cvpr2020du-mihui-proxy-anchor-loss-for-deep-metric-learning)
+
 
 こう見ると、 CSCE の方が良さそうですが、以下の論文の付録（On the limitations of cross-entropy）では **「相対的なラベルしかないとき」と「クラス数が多すぎるとき」 は PSCE** を推奨しています。相対的なラベルしかないというのは、データセット内の各サンプルのクラスが明確に定義されておらず、どの画像どうしが関係してるか・してないかだけが与えられてる状況です。また、クラス数が多すぎると、クラスベクトルの重み $\Theta$ のメモリ容量を確保するのが大変だからです。
 
-Boudiaf, M. et al., 2020: [[2003.08983] A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses](https://arxiv.org/abs/2003.08983)
+[(M. Boudiaf et al., 2020, ECCV) A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses](http://arxiv.org/abs/2003.08983) 
+
+また、以下の論文では、pairwise （論文中だと instance-to-instance）と classification （論文中だと instance-to-class, instance-to-proxy）についてまとめられており、 この論文では pairwise の方を支持しています。
+
+[(X. Wang et al., CVPR) Ranked List Loss for Deep Metric Learning](https://arxiv.org/abs/1903.03238) 
 
 ちなみに [N-pair loss](https://papers.nips.cc/paper/2016/hash/6b180037abbebea991d8b1232f8a8ca9-Abstract.html) はSCEを使っており、入力データが画像×画像なので、 PSCEベースの手法です。
 
