@@ -12,7 +12,7 @@ published: true
 
 # この記事の目的は？
 
-ファッション3つの研究分野において、 metric learning がどう使われているかを説明し、関連文献もいくつか紹介します。 metric learning やファッションの研究に興味を持たれた方が、研究を始めやすくなればと考えています。
+ファッションの3つの研究分野において、 metric learning がどう使われているかを説明し、関連文献をいくつか紹介します。 metric learning やファッションの研究に興味を持たれた方が、研究を始めやすくなればと考えています。
 
 
 # street-to-shop image retrieval
@@ -147,6 +147,10 @@ metric learning が活用されているファッションの研究分野を3つ
 |**attribute manipulation**|画像検索のテキストによる補正|アイテム画像 × 属性テキスト|同じアイテムの画像と属性かどうか|
 |**compatibility learning**|コーデ採点、アイテムからアイテムの推薦|アイテム画像 × （アイテム画像 or スタイル）|同じコーデで使われているアイテムかどうか|
 
+
+# 次回は？
+
+[metric learning Advent Calendar 2020](https://adventar.org/calendars/5596) はこの記事で終わりですが、 [ZOZOテクノロジーズ #3 Advent Calendar 2020](https://qiita.com/advent-calendar/2020/zozo_tech3) はまだまだ続きます！次回は [@ikenayl](https://qiita.com/ikenyal) さんの「代理：ライブ配信を支える技術」です！
 
 ---
 (※1) 一般的な用語ではありません。説明を簡単にするため、こう表現しました。
