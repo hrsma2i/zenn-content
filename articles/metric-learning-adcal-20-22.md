@@ -2,9 +2,13 @@
 title: "metric learning のファッション分野における活躍"
 emoji: "👗"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["metriclearning", "fashionMachineLearning", "compatibilityLearning", "attributeManipulation", ""]
+topics: ["metriclearning", "fashionMachineLearning", "compatibilityLearning", "attributeManipulation"]
 published: true
 ---
+
+:::message
+こちらは [ZOZOテクノロジーズ #3 Advent Calendar 2020](https://qiita.com/advent-calendar/2020/zozo_tech3) 兼 [metric learning Advent Calendar 2020](https://adventar.org/calendars/5596) の記事になります。
+:::
 
 # この記事の目的は？
 
