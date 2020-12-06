@@ -73,7 +73,7 @@ $$
 
 上の式は、 **metric learning の手法である triplet loss にそっくり** です[^3]。
 
-[^3]: triplet loss の論文では、計量にユークリッドとしていますが、便宜上、内積を計量としています。内積にしても metric learing と読んでよさそうです[^1]。
+[^3]: triplet loss の論文では、計量にユークリッドを用いていますが、便宜上、内積を用いています。内積でも metric learing と呼んでよさそうです[^1]。
 
 $$
 \min_{P, Q} \sum_{(u,i,j)}{ \max(0, - \bm{p}_u^T\bm{q}_i + \bm{p}_u^T\bm{q}_j+m)}
