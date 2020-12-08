@@ -2,9 +2,15 @@
 title: "自然言語処理のモデルを metric learning の観点からとらえる"
 emoji: "📏"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["metriclearning"]
-published: false
+topics: ["metriclearning", "NLP"]
+published: true
 ---
+
+:::message
+こちらは [metric learning Advent Calendar 2020](https://adventar.org/calendars/5596) の記事です。
+:::
+
+
 
 # この記事の目的は？
 
@@ -39,7 +45,9 @@ $$
 - $U, V \in \mathbb{R}^{d \times |W|}$: それぞれ単語ベクトル $\bm{u}_w, \bm{v}_w$ を並べた重み行列
 - $\bm{c}_t$: 文脈ベクトル。単語 $w_t$ の周辺語 $w_{t+j}$ の特徴量を和によって reduce したもの。 周辺語をいくつ使うかは、 ウィンドウサイズ $k$ によって決める。
 
-この式だけでもわかりますが、2回目の記事でも紹介したとおり、Softmax Cross Entropy (SCE) を使っているので、 **CBoW は単語×文脈の metric learning** ととらえられます。 特徴量空間において、 **周辺語による文脈ベクトルとターゲットの単語ベクトルを近づけ、ターゲット以外の単語ベクトルは離す** よう学習します。 下図は metric learning の観点から描きなおしたアーキテクチャです。
+上の式では Softmax Cross Entropy (SCE) を使っているので、 **CBoW は単語×文脈の metric learning** ととらえられます[^1]。 特徴量空間において、 **周辺語による文脈ベクトルとターゲットの単語ベクトルを近づけ、ターゲット以外の単語ベクトルは離す** よう学習します。 下図は metric learning の観点から描きなおしたアーキテクチャです。
+
+[^1]: SCE による学習は metric learning とみなせます。 同アドベントカレンダーの [metric learningとsoftmax cross entropyを比べること自体間違っている](https://zenn.dev/hrsma2i/articles/metric-learning-adcal-20-03) で説明しています。
 
 ![](https://storage.googleapis.com/zenn-user-upload/yexwv23kigzidlqakvff8r2f2o50)
 
@@ -123,9 +131,8 @@ $$
 
 既存の自然言語処理のモデルを metric learning の観点からとらえてみることで、 自然言語処理処理と metric learning に繋がりがあることを説明しました。
 
-ちなみに、トピックモデルである LSI も文書×単語の共起行列を SVD で行列分解するので、 metric learning としてとらえられないか考えているところです（埋め込み写像を、回転行列と対角行列に分解できるように正則化をかけたらできるのだろうか？）。
 
 # 次回は？
 
-推薦や自然言語処理に加えて、他にも metric learning と関係のある分野をいくつか紹介します。
+推薦や自然言語処理に以外にも metric learning と関係のある分野をまとめます。
 
