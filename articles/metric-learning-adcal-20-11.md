@@ -3,7 +3,7 @@ title: "metric learning と関係のある分野まとめ"
 emoji: "📏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["metriclearning"]
-published: false
+published: true 
 ---
 
 :::message
@@ -72,7 +72,11 @@ fine-grained image classification の他に、metric learning の手法がよく
 
 # マルチモーダル学習
 
-マルチモーダル学習とは、画像とテキスト、画像と音など、異なるドメインのデータ間の関係を学習する手法です(※1)。例えば、 visual-semantic embeddings という分野では対応する画像とテキストの特徴量が近くなるように学習します。 [この論文](https://arxiv.org/pdf/1411.2539.pdf) では以下のような損失関数で学習します(※2)。
+マルチモーダル学習とは、画像とテキスト、画像と音など、異なるドメインのデータ間の関係を学習する手法です[^1]。例えば、 visual-semantic embeddings という分野では対応する画像とテキストの特徴量が近くなるように学習します。 [この論文](https://arxiv.org/pdf/1411.2539.pdf) では以下のような損失関数で学習します[^2]。
+
+[^1]: 分布の多峰性のこともマルチモーダルと言いますが、それとは別の意味です。
+
+[^2]: わかりやすくするため、表記を少し変えています。
 
 
 $$
@@ -116,7 +120,9 @@ learning to rank とは、 主に検索のための学習方法で、 あるク�
 
 ポイントワイズとペアワイズの損失関数は、 metric learning の損失関数に近いと思います。
 
-ポイントワイズの一例(※3):
+ポイントワイズの一例[^3]:
+
+[^3]: 式は以下の[こちらのブログ記事](https://www.szdrblog.info/entry/2018/12/04/010611)を参考にさせていただきました。
 
 $$
 \sum_{q,d}\bigl\{{y_{q,d} - f(\bm{x}_{q,d})}\bigr\}^2
@@ -166,12 +172,12 @@ metric learning はカーネル法と等価らしいです。詳細は以下の�
 
 # 推薦
 
-同アドベントカレンダーの3回目の記事で、 MF (Matrix Factrization) や BPR (Bayesian Personalized Ranking) が metric learning の手法に似ていることや、 metric learning を使った推薦手法を紹介しました。
+[推薦モデルを metric leaning の観点からとらえる](https://zenn.dev/hrsma2i/articles/metric-learning-adcal-20-07) で、 MF (Matrix Factrization) や BPR (Bayesian Personalized Ranking) が metric learning の手法に似ていることや、 metric learning を使った推薦手法を紹介しました。
 
 
 # 自然言語処理
 
-同アドベントカレンダーの4回目の記事で、 Word2Vec や RNN による言語モデル (RNNLM) が metric learning であることを説明しました。
+[自然言語処理のモデルを metric learning の観点からとらえる](https://zenn.dev/hrsma2i/articles/metric-learning-adcal-20-09) で、 Word2Vec や RNN による言語モデル (RNNLM) が metric learning であることを説明しました。
 
 
 # まとめ
@@ -180,17 +186,6 @@ metric learning と関係のある分野をリストアップしました。こ�
 
 例えば、 Word2Vec や RNNLM の負例には、他の文では正例である単語が来る可能性もあります（「I have a pen」「I have a dog」という文は両方ともありえますが、前者において「dog」、後者において「pen」は負例になってしまいます）。 このように正例になる可能性がある負例は、推薦分野における _implicit feedback_ の負例に近いと考えています。そこで Word2Vec や RNNLM の Softmax Cross-Entropy の代わりに BPR や triplet loss などを使ってみても面白いのかなと考えています。
 
-また、マルチモーダル学習では、 _early fusion_ （特徴量どうしを結合してからネットワークに通して計量を出す方法） や _late fusion_ （特徴量をネットワークに通して得られた特徴量から計量を出す方法）という用語が一般的になってるようですが、 その他の分野では明示的に区別されてなさそうです。 Skip-Gram と CBoW も学習するデータは同じで、データを融合するタイミングが異なるだけなので、 この fusion まわりの議論を自然言語処理に持ち込んでも面白いかもしれません。
-
-
 # 次回は？
 
 次回は、 metric learning の既存手法がそれぞれ **「ミニバッチ内の情報をどくらい活用できているか」をグラム行列の観点から可視化** してみます。
-
----
-
-(※1) 分布の多峰性のこともマルチモーダルと言いますが、それとは別の意味です。
-
-(※2) わかりやすくするため、表記を少し変えています。
-
-(※3) 式は以下の[こちらのブログ記事](https://www.szdrblog.info/entry/2018/12/04/010611)を参考にさせていただきました。
