@@ -3,7 +3,7 @@ title: "metric leraning のバッチ活用具合をグラム行列の視点か�
 emoji: "📏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["metriclearning"]
-published: false
+published: true 
 ---
 
 :::message
@@ -46,7 +46,9 @@ $$
 
 # contrastive loss
 
-まず、 contrastive loss のバッチ活用具合を可視化します。 contrastive loss の損失関数は以下です(※1)。
+まず、 contrastive loss のバッチ活用具合を可視化します。 contrastive loss の損失関数は以下です[^1]。
+
+[^1]: わかりやすさのため、本質でない部分を削ぎ落としたり、表記を変えたり、若干の変更を加えています。
 
 $$
 \sum_{k=1}^{B_{\rm con}}{
@@ -83,11 +85,11 @@ contrastive loss のバッチは下図のような構成になります。
 
 参考
 
-- http://yann.lecun.com/exdb/publis/pdf/hadsell-chopra-lecun-06.pdf
+http://yann.lecun.com/exdb/publis/pdf/hadsell-chopra-lecun-06.pdf
 
 # triplet loss
 
-triplet loss の損失関数は以下です(※1)。
+triplet loss の損失関数は以下です[^1]。
 
 $$
 \sum_{k=1}^{B_{\rm tri}}{
@@ -134,7 +136,7 @@ triplet loss のバッチは下図のような構成になります。
 
 # N-pair loss
 
-N-pair loss の損失関数は以下です(※1)。
+N-pair loss の損失関数は以下です[^1]。
 
 $$
 - \sum_{k=1}^{B_{\rm Npair}}{
@@ -182,7 +184,7 @@ $$
 
 参考
 
-- https://papers.nips.cc/paper/2016/file/6b180037abbebea991d8b1232f8a8ca9-Paper.pdf
+https://papers.nips.cc/paper/2016/file/6b180037abbebea991d8b1232f8a8ca9-Paper.pdf
 
 # lifted structured loss
 
@@ -279,7 +281,7 @@ $$
 
 参考
 
-- https://arxiv.org/pdf/1511.06452.pdf 
+https://arxiv.org/pdf/1511.06452.pdf 
 
 # quadruplet loss
 
@@ -332,7 +334,3 @@ metric learning の手法のバッチ活用具合を、グラム行列の視点�
 # 次回は？
 
 metric learning の推論を高速・軽量化する方法をいくつか紹介します。
-
----
-
-(※1) わかりやすさのため、本質でない部分を削ぎ落としたり、表記を変えたり、若干の変更を加えています。
