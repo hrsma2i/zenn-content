@@ -127,17 +127,36 @@ pandas の方が小回りが効くので実験段階ではそれで十分です�
 
 ただ、 ベンダーロックインを回避するため、 UDF で複雑なことをやりすぎないように注意します。
 
+# 前処理などを含め、推論をメソッド1つで呼べるようにしておく
+
+以下のように、学習成果物をまとめたディレクトリを指定し、メソッド1つ呼べば推論ができるようにしておきます。多少、自社のデータセットに密結合になっても、引き継ぐエンジニアが簡単に使える形で実装します。密結合を避けたければ、汎用的なメソッド（`_predict`）を作り、それを利用先に合わせたメソッド（`predict`）でラップすればいいだけです。
+
+```py
+class FooModel:
+    def __init___(self, model_dir):
+        # load model artifacts
+
+    def predict(self, user_id: str) -> str:
+        u = self.user_id2index(user_id)
+        i = self._predict(u)
+        return self.item_index2id(i)
+```
+
+前処理などを分けてしまうと、引き継いだエンジニアの手間が増えたり、前処理を施し忘れて性能劣化のバグを生む可能性があります。
+
 # 推論のループでは pandas の apply() を使い、 for + iterrows() は避ける
 
 データセットの各サンプルについて推論を行う場合、 pandas の apply を使うのが速いです。ベクトル演算として表現できるなら、その方がより速いです。for + iterrows は遅いです。以下の資料では、5つのループの方法について比較しています。
 
 https://engineering.upside.com/a-beginners-guide-to-optimizing-pandas-code-for-speed-c09ef2c6a4d6
 
-さらならる高速化を目指すなら、並列・分散処理のできる dask や vaex を使うという手があります。
+さらなる高速化を手っ取り早く目指すなら、並列・分散処理のできる dask や vaex を使うという手があります。
 
 ![](https://global-uploads.webflow.com/5d3ec351b1eba4332d213004/5ef62ef85090a97b0c469fa9_image5.png)
 
 出典：https://www.datarevenue.com/en-blog/pandas-vs-dask-vs-vaex-vs-modin-vs-rapids-vs-ray
+
+Apache Spark や Beam という選択肢ありますが、この記事の範疇を超える気がしたので詳細は割愛します。
 
 # 学習・推論・評価に分けてスクリプト化する
 
@@ -258,6 +277,8 @@ $ train.py --help
 - データ取得の SQL も Git 管理して、ファイルとの対応を残す
 - テンソルの shape をコメントする
 - なるべく BigQuery に任す
+- 前処理などを含め、推論をメソッド1つで呼べるようにしておく
+- 推論のループでは pandas の apply() を使い、 for + iterrows() は避ける
 - 学習・推論・評価に分けてスクリプト化する
 - データから実行する関数 → パスから実行する関数 → CLI と階層化する
 
