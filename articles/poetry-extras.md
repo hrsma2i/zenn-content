@@ -3,7 +3,7 @@ title: "Poetryでプラットフォームごとにインストールするライ
 emoji: "🐍"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["python", "poetry"]
-published: false
+published: true
 ---
 
 # Poetry とは
