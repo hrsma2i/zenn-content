@@ -3,7 +3,7 @@ title: "Kubeflow で Filestore を使って画像の受け渡しをする"
 emoji: "🐙"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["kubeflow", "GKE", "filestore"]
-published: false
+published: true
 ---
 
 # はじめに
